@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">AndroidLabs</string>
+    <string name="app_name">My Application</string>
     <string name="hello_message">Hello World!</string>
     <string name="ButtonText">I\'m a button</string>
+    <string name="login">Login</string>
+    <string name="loginname">login name</string>
+    <string name="passwd">password</string>
+    <string name="swit">What does this do?</string>
+    <string name="radio">RadioButton</string>
+    <string name="check">CheckBox</string>
 </resources>
