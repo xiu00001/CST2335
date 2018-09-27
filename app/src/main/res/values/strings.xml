@@ -8,4 +8,9 @@
     <string name="swit">What does this do?</string>
     <string name="radio">RadioButton</string>
     <string name="check">CheckBox</string>
+    <string name="dialog_message">Do you want to finish the activity?</string>
+    <string name="dialog_title">Alert</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
 </resources>
