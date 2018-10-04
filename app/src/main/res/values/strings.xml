@@ -12,5 +12,7 @@
     <string name="dialog_title">Alert</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="startChat">Start Chat</string>
+    <string name="send">Send</string>
 
 </resources>

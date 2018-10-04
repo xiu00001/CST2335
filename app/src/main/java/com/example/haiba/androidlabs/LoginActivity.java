@@ -13,8 +13,11 @@ import android.widget.EditText;
 public class LoginActivity extends Activity {
 
     protected static final String ACTIVITY_NAME = "LoginActivity";
-    SharedPreferences pref;
-    EditText email;
+    private static final String MY_PREF = "MY_PREF";
+    private static final String DEFAULT_EMAIL_KEY = "DEFAULT_EMAIL_KEY";
+    private SharedPreferences pref;
+    private EditText email;
+    private Button loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +25,26 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
-        Button loginBtn = (Button)findViewById(R.id.login);
+        loginBtn = (Button)findViewById(R.id.login);
         email = (EditText) findViewById(R.id.loginName);
-        pref = getSharedPreferences("emailAddress", Context.MODE_PRIVATE);
-        String defaultEmail = pref.getString("DefaultEmail","email@domain.com");
+        //initial or get SharedPreference
+        pref = getSharedPreferences(MY_PREF, Context.MODE_PRIVATE);
+
+        //get value from SharedPref and save it into a variable
+        String defaultEmail = pref.getString(DEFAULT_EMAIL_KEY,"email@domain.com");
         email.setText(defaultEmail);
 
+        //login button click listener
+        //inside login button click listener
+        //take value from emailEditText(email)
+        //save it back to SharedPreference
+        //next transit to StartActivity
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor edit = pref.edit();
                 String input = email.getText().toString();
-                edit.putString("DefaultEmail",input);
+                edit.putString(DEFAULT_EMAIL_KEY,input);
                 edit.commit();
                 Intent intent = new Intent(LoginActivity.this,StartActivity.class);
                 startActivity(intent);
