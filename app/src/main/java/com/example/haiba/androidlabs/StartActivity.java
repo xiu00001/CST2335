@@ -28,13 +28,31 @@ public class StartActivity extends Activity {
             }
         });
 
-        Button startChat = (Button)findViewById(R.id.startChat);
+        final Button startChat = (Button)findViewById(R.id.startChat);
 
         startChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(ACTIVITY_NAME,"User clicked Start Chat");
                 Intent intent = new Intent(StartActivity.this,ChatWindow.class);
+                startActivity(intent);
+            }
+        });
+
+        Button weather  = (Button)findViewById(R.id.weather);
+        weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartActivity.this,WeatherForecast.class);
+                startActivity(intent);
+            }
+        });
+
+        Button toolBar = (Button)findViewById(R.id.toolBar);
+        toolBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartActivity.this,TestToolbar.class);
                 startActivity(intent);
             }
         });
@@ -83,3 +101,4 @@ public class StartActivity extends Activity {
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 }
+//Valera Navitaniuc - 613-501-5209
